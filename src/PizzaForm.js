@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 export default function PizzaForm(props) {
   const {
@@ -16,6 +17,7 @@ export default function PizzaForm(props) {
       <div className="form-pic" />
       <form onSubmit={onSubmit}>
         <h3>Build Your Own Pizza</h3>
+
         <div className="name-input">
           <label>
             Name:&nbsp;
@@ -26,6 +28,8 @@ export default function PizzaForm(props) {
               value={values.name}
             />
           </label>
+
+          <div>{errors.name}</div>
         </div>
         <div label="pizza-size">
           <label>
@@ -38,6 +42,8 @@ export default function PizzaForm(props) {
               <option value="extra-large">Extra Large</option>
             </select>
           </label>
+
+          <div>{errors.size}</div>
         </div>
         <div>
           Add Toppings
@@ -150,10 +156,6 @@ export default function PizzaForm(props) {
           </label>
         </div>
         <button disabled={disabled}>Submit</button>
-        <div className="errors">
-          <div>{errors.name}</div>
-          <div>{errors.size}</div>
-        </div>
       </form>
     </div>
   );

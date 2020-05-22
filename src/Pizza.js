@@ -19,7 +19,7 @@ export default function Pizza(props) {
       <ul>
         Pizza Toppings:
         {chosenToppings.map((topping, index) => {
-          return <li key={index}>{topping}</li>;
+          return <li key={index}>-{topping}</li>;
         })}
       </ul>
       <h3>Delivery Instructions (if any): {instructions}</h3>
